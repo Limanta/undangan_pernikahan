@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Fuad & Andrianna</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <!-- Preloading screen -->
+  <div class="preload-screen" id="preload">
+    <h1>Open Invitation</h1>
+    <p>Please wait</p>
+    <div class="progress-bar" style="width: 60%; height: 10px; background: #eee; border-radius: 10px; overflow: hidden;">
+      <div id="bar" style="height: 100%; width: 0; background: navy; transition: width 0.2s;"></div>
+    </div>
+    <p id="progress-percent">0%</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent" style="display:none;">
+    <!-- Halaman Awal -->
+    <div class="audio-wrapper">
+      <button class="audio-button" onclick="toggleAudio()"></button>
+      <audio id="customAudio">
+        <source src="img/beautiful.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="fade-content" id="initialContent">
+      <h1>mas Fuad & Andrianna</h1>
+      <p>Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+      <div class="guest-name">Nama Tamu</div>
+      <button class="btn-buka" onclick="showInvitation()">📬 Buka Undangan</button>
+      <p style="font-size: 12px; color: lightgray;">Mohon maaf apabila ada kesalahan penulisan nama/gelar</p>
+    </div>
+  
+
+    <!-- Konten Undangan -->
+    <div id="invitationContent" style="display:none;">
+      <section class="fade-content scroll-section">
+        <h2>THE WEDDING OF</h2>
+        <h1 style="font-family:'Great Vibes', cursive; font-size:50px;">mas Fuad & Andrianna</h1>
+        <p style="font-size:24px;">23 . 06 . 2025</p>
+        <div class="countdown" id="countdownTimer">
+          <div>0 <span>Hari</span></div>
+          <div>0 <span>Jam</span></div>
+          <div>0 <span>Menit</span></div>
+          <div>0 <span>Detik</span></div>
+        </div>
+        <a href="#" onclick="saveToCalendar()" class="btn-save">📅 Save The Date</a>
+      </section>
+
+      <!-- Ayat Kolose -->
+      <section class="scroll-section">
+        <div class="verse-box">
+          <img  src="img/flower.png" alt="Dekorasi Bunga" class="verse-decoration" />
+          <p class="verse-text">
+            "Dan di atas semuanya itu: kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan."
+          </p>
+          <p class="verse-ref">- KOLOSE 3:14 -</p>
+        </div>
+      </section>
+
+      <section class="scroll-section" style="text-align: center; color: white; margin-top: 20px;">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px; margin: 20px 0;">The Groom</h2>
+      
+        <!-- Nama Mempelai Pria -->
+        <h1 style="font-size: 28px; font-weight: bold; margin: 10px 0;">
+          mas Fuad, S.jmk
+        </h1>
+      
+        <!-- Orang Tua -->
+        <p style="font-size: 16px; margin: 5px 0;">Putra </p>
+        <p style="font-size: 16px; margin: 5px 0;">& </p>
+      
+        <!-- Instagram -->
+        <div style="margin: 15px 0;">
+          <span style="border: 1px solid white; border-radius: 20px; padding: 8px 20px; display: inline-block;">
+            📷 @masfuad.id
+          </span>
+        </div>  
+        <!-- Simbol & -->
+        <div style="font-size: 40px; font-weight: bold; margin-top: 30px;">&</div>
+      </section>
+
+      <!-- Profil Mempelai Wanita -->
+      <section class="scroll-section" style="text-align: center; color: white; margin-top: 40px;">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px; margin: 20px 0;">The Bride</h2>
+      
+        <!-- Nama Mempelai Wanita -->
+        <h1 style="font-size: 28px; font-weight: bold; margin: 10px 0;">
+          Andrianna, S.BBS
+        </h1>
+      
+        <!-- Orang Tua -->
+        <p style="font-size: 16px; margin: 5px 0;">Putri </p>
+        <p style="font-size: 16px; margin: 5px 0;">& </p>
+      
+        <!-- Instagram -->
+        <div style="margin: 15px 0;">
+          <span style="border: 1px solid white; border-radius: 20px; padding: 8px 20px; display: inline-block;">
+            📷 @andrianna_babershop.id
+          </span>
+        </div>
+
+      </section>
+      
+      <section class="scroll-section photo-pair-section">
+        <div class="verse-box">
+          <div class="outer-frame">
+            <h2 class="photo-title">Wedding Event</h2>
+          </div>
+
+          <div class="photo-pair-container">
+                 <div class="photo-frame">
+                     <img src="img/foto1.png" alt="Foto 1">
+                 </div>
+                 <div class="photo-frame">
+                   <img src="img/foto1.png" alt="Foto 2">
+                 </div>
+          </div>
+           <div class="outer-frame">
+           <h3 class="invitation-title">Pemberkatan</h3>
+           </div>
+             <p><strong>SENIN</strong><br>23 juni 2025</p>
+            <div class="divider">------------------------------💍------------------------------
+            </div>
+             <p><strong>Pukul 15.00 - 18.00 WIB</strong></p>
+              <p>
+                    Bertempat di:<br>
+                    Gereja Katolik St. Damian Lau Baleng<br>
+                   Kec. Lau Baleng Kab. Karo<br>
+                  Jln. Besar medan - kuta cane
+              </p>
+
+               <a href="https://www.google.com/maps/dir//33VP%2B95M,+Lau+Baleng,+Kec.+Laubaleng,+Kabupaten+Karo,+Sumatera+Utara" 
+                 target="_blank" class="map-button">Lihat Lokasi di Map</a>
+
+               <div class="vertical-line">
+               </div>
+
+               <h3 class="invitation-title">Resepsi</h3>
+                <p><strong>SELASA</strong><br>24 juni 2025</p>
+                <div class="divider">------------------------------💍------------------------------
+                </div>
+                <p><strong>Pukul 08.00 - 18.00 WIB</strong></p>
+                  <p>
+                    Bertempat di:<br>
+                    Desa Lau Baleng Kec. Lau Baleng Kab. Karo<br>
+                     Sumatera Utara
+                  </p>
+
+                       <a href="https://www.google.com/maps/place/Lau+Baleng,+Kec.+Laubaleng,+Kabupaten+Karo,+Sumatera+Utara" 
+                    target="_blank" class="map-button">Lihat Lokasi di Map</a>
+          </div>
+</section>
+
+<section class="scroll-section">
+  <div class="verse-box">
+    <div class="outer-frame">
+      <h2 class="photo-title">Love Story</h2>
+      <button class="accordion-toggle" onclick="toggleAccordion('berkenalan')">Berkenalan</button>
+
+      <!-- Akordeon Berkenalan -->
+      <div id="berkenalan" class="accordion-content" style="display: none;">
+        <img  id="img-berkenalan" src="img/berkenalan2.png" alt="Berkenalan">
+        <p><strong>26 April 2019</strong></p>
+        <p>Dikenalkan oleh teman setelah Paskah. Minta nomor WA untuk berkenalan lebih lanjut.</p>
+      </div>
+    <button class="accordion-toggle" onclick="toggleAccordion('berpacaran')">Berpacaran</button>
+      
+      <!-- Akordeon Berpacaran -->
+      <div id="berpacaran" class="accordion-content" style="display: none;">
+        <img  id="img-berpacaran" src="img/berpacaran2.png" alt="Berpacaran">
+        <p><strong>13 september 2021</strong></p>
+        <p>Mulai saling mengenal lebih dalam,Setelah berkomunikasi dan saling berbagi cerita,
+           kami merasa saling melengkapi 1 sama lain dan kami saling mengungkapkan perasaan kami selama ini.</p>
+      </div>
+
+      <!-- Tombol untuk membuka bagian "Menikah" -->
+      <button class="accordion-toggle" onclick="toggleAccordion('menikah')">Menikah</button>
+      
+      <!-- Akordeon Menikah -->
+      <div id="menikah" class="accordion-content" style="display: none;">
+        <img id="img-menikah" src="img/menikah2.png" alt="Menikah">
+        <p><strong>14 April 2025</strong></p>
+        <p>Setelah menjalin hubungan putus nyambung selama hampir 4 tahun akhir nya memutuskan melanjutkan 
+          ke jenjang hubungan yang lebih serius, kami memutuskan menikah..</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scroll-section">
+  <div class="verse-box">
+    <div class="outer-frame">
+      <h2 class="photo-title">Our Foto</h2>
+    </div> 
+    <div class="photo-gallery">
+      <img src="img/foto111.png" alt="Foto 1">
+      <img src="img/foto2.png" alt="Foto 2">
+      <img src="img/foto3.png" alt="Foto 3">
+      <img src="img/foto4.png" alt="Foto 4">
+      <img src="img/foto5.png" alt="Foto 1">
+      <img src="img/foto6.png" alt="Foto 2">
+      <img src="img/foto7.png" alt="Foto 3">
+      <img src="img/foto8.png" alt="Foto 4"> 
+      <img src="img/foto9.png" alt="Foto 1">
+      <img src="img/foto10.png" alt="Foto 2">
+      <img src="img/foto11.png" alt="Foto 3">
+      <img src="img/foto12.png" alt="Foto 4"> 
+      <img src="img/foto13.png" alt="Foto 1">
+      <img src="img/foto14.png" alt="Foto 2">
+      <img src="img/foto15.png" alt="Foto 3">
+      <img src="img/foto16.png" alt="Foto 4">
+      <img src="img/foto17.png" alt="Foto 1">
+      <img src="img/foto18.png" alt="Foto 2">
+      <img src="img/foto19.png" alt="Foto 3">
+      <img src="img/berkenalan2.png" alt="Foto 4">
+  </div>
+    </section>
+    <section class="scroll-section" style="text-align: center; color: white; margin-top: 20px;">
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px; margin: 20px 0;">Thank you</h2>
+      </section>
+
+
+      <div class="marquee-container">
+        <div class="marquee-content">
+          <img src="img/foto111.png" alt="Foto 1">
+          <img src="img/foto2.png" alt="Foto 2">
+          <img src="img/foto3.png" alt="Foto 3">
+          <img src="img/foto4.png" alt="Foto 4">
+          <img src="img/foto5.png" alt="Foto 1">
+          <img src="img/foto6.png" alt="Foto 2">
+          <img src="img/foto7.png" alt="Foto 3">
+          <img src="img/foto8.png" alt="Foto 4"> 
+          <img src="img/foto9.png" alt="Foto 1">
+          <img src="img/foto10.png" alt="Foto 2">
+          <img src="img/foto11.png" alt="Foto 3">
+          <img src="img/foto12.png" alt="Foto 4"> 
+          <img src="img/foto13.png" alt="Foto 1">
+          <img src="img/foto14.png" alt="Foto 2">
+          <img src="img/foto15.png" alt="Foto 3">
+          <img src="img/foto16.png" alt="Foto 4">
+          <img src="img/foto17.png" alt="Foto 1">
+          <img src="img/foto18.png" alt="Foto 2">
+          <img src="img/foto19.png" alt="Foto 3">
+          <img src="img/berkenalan2.png" alt="Foto 4">
+          <!-- Bisa tambah gambar lagi -->
+        </div>
+      </div>
+      <section class="scroll-section" style="text-align: center; color: white; margin-top: 20px;">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px; margin: 20px 0;">Fuad & Andrianna</h2>
+        </section>
+</div>
+</div>
+   <script src="script.js"></script>
+</body>
+</html>
